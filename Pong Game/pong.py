@@ -102,12 +102,13 @@ wn.onkeypress(paddle_A.goDown,"s")
 wn.onkeypress(paddle_B.goUp,"Up")
 wn.onkeypress(paddle_B.goDown,"Down")
 
-
-while True:
-    wn.update()
-    ball.move()
-    cR,cL = ball.checkEdgeX()
-    if cR + cL:
-        pen.wr(cR,cL)
-    ball.collitionLeft(paddle_A.ycor())
-    ball.collitionRight(paddle_B.ycor())
+def main():
+    while True:
+        wn.update()
+        ball.move()
+        cR,cL = ball.checkEdgeX()
+        if cR + cL:
+            pen.wr(cR,cL)
+        ball.collitionLeft(paddle_A.ycor())
+        ball.collitionRight(paddle_B.ycor())
+main()
